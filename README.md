@@ -26,6 +26,10 @@ New users must register on the main **CloudSERA** website, by clicking the *Regi
 
 ![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/00Register.png)
 
+If you do not remember your information you must access the Mendeley page to retrieve your username and password. Once you have entered your information, a welcome message will appear and you can access the tool's operations.
+
+![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/01Welcome.png)
+
 
 ## Developer's guide
 
