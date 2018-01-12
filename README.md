@@ -22,11 +22,15 @@ No installation is necessary by the user. The management of the bibliographic re
 To begin the guide of this project, we proceed to enter the following link: [http://slr.uca.es/](http://slr.uca.es/).
 
 ### 1.3 Register User in application
-New users must register on the main **CloudSERA** website, by clicking the *Register now* button, with their Mendely user (email and password).
+New users must register on the main **CloudSERA** website, by clicking the [**Register now button**](http://slr.uca.es/register), with their Mendely user (email and password).
 
 ![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/00Register.png)
 
 If you do not remember your information you must access the Mendeley page to retrieve your username and password. Once you have entered your information, a welcome message will appear and you can access the tool's operations.
+
+### 1.4 Enter in the application
+In case you already have the registration in the application, choose the option [**Sing up today**](http://slr.uca.es/login/auth?format=) and enter the user's email and password of Mendeley.
+
 
 ![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/01Welcome.png)
 
