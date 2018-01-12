@@ -1,6 +1,6 @@
 ![CLOUDsERA.jpeg](https://github.com/spi-fm/CloudSERA/blob/master/CloudSERA-sm.jpeg)
 
-# CloudSERA - Cloud Systematic Evidence-based Review of Articles
+# Cloud Systematic Evidence-based Review of Articles
 Tool for supporting systematic reviews, both systematic literature reviews and systematic mappings.
 
 ## Quick start
