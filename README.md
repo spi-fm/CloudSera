@@ -24,7 +24,7 @@ To begin the guide of this project, we proceed to enter the following link: [htt
 ### 1.3 Register User in application
 New users must register on the main **CloudSERA** website, by clicking the [**Register now button**](http://slr.uca.es/register), with their Mendely user (email and password).
 
-![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/00Register.png)
+![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/00Register1.png)
 
 If you do not remember your information you must access the Mendeley page to retrieve your username and password. Once you have entered your information, a welcome message will appear and you can access the tool's operations.
 
@@ -34,8 +34,11 @@ In case you already have the registration in the application, choose the option 
 
 ![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/01Welcome.png)
 
-### 1.5 
-One that the user has entered into the CloudSERA tool will appear a menu where the user can change their profile. The user profile collects the most important data from your Mendeley account, if these were not updated the user can press the synchronize button (Mendeley) to update this information.
+### 1.5 User Profile
+One that the user has entered into the **CloudSERA** tool will appear a menu where the user can change their profile. The user profile collects the most important data from your Mendeley account, if these were not updated the user can press the synchronize button (Mendeley) to update this information.
+
+![Profile](https://github.com/spi-fm/CloudSERA/blob/master/images/04Profile.png)
+
 
 ## Developer's guide
 
