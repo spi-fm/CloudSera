@@ -37,7 +37,7 @@ In case you already have the registration in the application, choose the option 
 ### 1.5 User Profile
 One that the user has entered into the **CloudSERA** tool will appear a menu where the user can change their profile. The user profile collects the most important data from your Mendeley account, if these were not updated the user can press the synchronize button (Mendeley) to update this information.
 
-![Profile](https://github.com/spi-fm/CloudSERA/blob/master/images/04Profile.png)
+![Profile](https://github.com/spi-fm/CloudSERA/blob/master/images/04Profile1.png)
 
 
 ## Developer's guide
