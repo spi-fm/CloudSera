@@ -1,4 +1,4 @@
-![CLOUDsERA.jpeg](https://github.com/spi-fm/CloudSERA/blob/master/CloudSERA-sm.jpeg)
+![CLOUDsERA.jpeg](https://github.com/spi-fm/CloudSERA/blob/master/images/CloudSERA-sm.jpeg)
 
 # Cloud Systematic Evidence-based Review of Articles
 Tool for supporting systematic reviews, both systematic literature reviews and systematic mappings.
@@ -21,6 +21,10 @@ No installation is necessary by the user. The management of the bibliographic re
 
 To begin the guide of this project, we proceed to enter the following link: [http://slr.uca.es/](http://slr.uca.es/).
 
+### 1.3 Register User in application
+New users must register on the main **CloudSERA** website, by clicking the *Register now* button, with their Mendely user (email and password).
+
+![User registration in application](https://github.com/spi-fm/CloudSERA/blob/master/images/00Register.png)
 
 
 ## Developer's guide
