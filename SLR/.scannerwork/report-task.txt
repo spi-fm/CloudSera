@@ -1,0 +1,6 @@
+projectKey=slr-project
+serverUrl=http://localhost:9000
+serverVersion=6.4.0.25310
+dashboardUrl=http://localhost:9000/dashboard/index/slr-project
+ceTaskId=AVyRxZ_jD79qiuhXPIat
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVyRxZ_jD79qiuhXPIat
