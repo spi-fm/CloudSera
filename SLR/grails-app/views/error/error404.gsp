@@ -27,7 +27,7 @@
 	<div class="container">
 	    <div class="row">
 	    <div class="error-template">
-		    <h1>Systematic Literature Review</h1>
+		    <h1>Systematic Review</h1>
 		    <h2>Opps, Error 404</h2>
 		    <div class="error-details" style="padding-top: 20px;">
 				There are an error. Try again later or <br/> contact with the administrator if the problem persists.

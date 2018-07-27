@@ -27,10 +27,10 @@
 	<div class="container">
 	    <div class="row">
 		    <div class="error-template">
-			    <h1>Systematic Literature Review</h1>
+			    <h1>Systematic Review</h1>
 			    <h2>Maintenance</h2>
 			    <div class="error-details" style="padding-top: 20px;">
-					Systematic Literature Review is in maintenance. Try again later please.
+					Systematic Review is in maintenance. Try again later please.
 			    </div>
 			</div>
 	    </div>

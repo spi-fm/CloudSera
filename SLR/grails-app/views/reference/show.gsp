@@ -9,11 +9,12 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Reference ${referenceInstance.title}</title>
+    <title>CloudSERA | Reference ${referenceInstance.title}</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
-	
+
 	<script type="text/javascript">
 		function loadModal()
 		{
@@ -67,7 +68,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<%-- Ventana modal para sincronizar slr's --%>
     <div class="modal fade" id="myModalSynchro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -90,27 +91,27 @@
 	</div>
 
 	<g:form class="form-horizontal" controller="reference" action="save" method="POST" name="myForm" id="myForm">
-	
+
 		<g:hiddenField name="idmend" value="${referenceInstance.idmend}"/>
-	
+
 	    <div id="wrapper">
-	
+
 	        <%-- Head --%>
 	        <g:render template="head" contextPath="/"/>
-	        
-	        <div id="page-wrapper">	
+
+	        <div id="page-wrapper">
 				<div class="row" style="margin-bottom: 20px;">
 					<div class="col-lg-12">
 						<h1 class="page-header">${referenceInstance.title}</h1>
-						
+
 						<ol class="breadcrumb">
 						  <li><g:link controller="index" action="menu">Home</g:link></li>
-						  <li><g:link controller="slr" action="myList">My SLR's</g:link></li>
+						  <li><g:link controller="slr" action="myList">My Reviews</g:link></li>
 						  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 						  <li><g:link controller="slr" action="references" params="[guid: "${slrInstance.guid}"]">References</g:link></li>
 						  <li class="active">${refBreadCrumb}</li>
 						</ol>
-						
+
 						<g:if test="${userOwnerInstance.id == User.get(sec.loggedInUserInfo(field:"id").toString().toLong()).id}">
 							<g:submitButton class="btn btn-success" name="create" value="Save changes" onclick="loading('Saving changes...');" />
 							<g:if test="${!noDrop}">
@@ -125,7 +126,7 @@
 						</g:if>
 					</div>
 				</div>
-				
+
 				<g:if test="${userOwnerInstance.id == User.get(sec.loggedInUserInfo(field:"id").toString().toLong()).id}">
 					<g:set var="isEditable" value="" />
 					<g:set var="isEditableSelect" value="" />
@@ -134,14 +135,14 @@
 					<g:set var="isEditable" value="readonly=\'readonly\'" />
 					<g:set var="isEditableSelect" value="disabled=\'disabled\'" />
 				</g:else>
-				
+
 				<g:if test="${isEditable == ""}">
 					<div class="row">
 						<div id="divSuccess" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Changes saved correctly.</div>
 						<div id="divError" class="alert alert-danger" role="alert" style="display: none;"><i class="fa fa-remove fa-fw"></i> ${error}</div>
 					</div>
 				</g:if>
-				
+
 				<h4>Criterio</h4>
 				<div class="row">
 					<div class="col-lg-6">
@@ -163,7 +164,7 @@
 					</div>
 					<div class="col-lg-6"></div>
 				</div>
-				
+
 				<g:if test="${referenceInstance.specificAttributes.size() != 0}">
 					<h4>Specific Attributes</h4>
 					<g:set var="cont" value="${0}" />
@@ -192,14 +193,14 @@
 								</div>
 							</div>
 						</g:each>
-						
+
 						<g:if test="${cont % 2 != 0}">
 							<div class="col-lg-6"></div>
 						</g:if>
-						
+
 					</div>
 				</g:if>
-				
+
 				<h4>Common Attributes</h4>
 				<div class="row">
 					<div class="col-lg-6">
@@ -242,7 +243,7 @@
 							</a>
 						</div>
 					</div>
-					
+
 					<div class="col-lg-6">
 						<div class="form-group">
 							<label for="inputYear" class="col-sm-3 control-label">Year</label>
@@ -275,7 +276,7 @@
 				</div>
 
 				<div class="row collapse" id="rowCollapse">
-				
+
 				  <div class="col-lg-6">
 				  	<div class="form-group">
 							<label for="inputISBN" class="col-sm-3 control-label">ISBN</label>
@@ -332,7 +333,7 @@
 							</div>
 						</div>
 				  </div>
-				  
+
 				  <div class="col-lg-6">
 					<div class="form-group">
 						<label for="inputCitationKey" class="col-sm-3 control-label">Citation Key:</label>
@@ -389,19 +390,19 @@
 						</div>
 					</div>
 				  </div>
-				  
+
 				</div>
 
 			</div>
 			<!-- /#page-wrapper -->
-	
+
 			<%-- Foot --%>
 	        <g:render template="foot" contextPath="/"/>
-	
+
 	    </div>
 	    <!-- /#wrapper -->
-    </g:form>    
-    
+    </g:form>
+
 	<%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
 

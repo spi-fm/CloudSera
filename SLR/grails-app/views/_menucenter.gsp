@@ -9,7 +9,7 @@
 	                   </div>
 	                   <div class="col-xs-9 text-right">
 	                       <div class="huge">${(User.get(sec.loggedInUserInfo(field:"id").toString().toLong()).userProfile.slrs.size() > 100 ? "+100" : User.get(sec.loggedInUserInfo(field:"id").toString().toLong()).userProfile.slrs.size().toString())}</div>
-	                       <div>Systematic<br />Literature Reviews</div>
+	                       <div>Reviews</br></br></div>
 	                   </div>
 	               </div>
 	           </div>

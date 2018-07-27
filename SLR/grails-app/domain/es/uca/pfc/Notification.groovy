@@ -3,7 +3,7 @@ package es.uca.pfc
 class Notification {
 
     static belongsTo = [profile: UserProfile]
-	
+
 	Date fecha = new Date()
 	String fechaString = ""
 	String asunto = ""
@@ -11,33 +11,37 @@ class Notification {
 	String tipo = "slr" // slr-friend-search
 	boolean leido = false
 	String guid = UUID.randomUUID().toString();
-	
+
     static constraints = {
+      asunto(size:0..255)
+      fechaString(size:0..255)
+      guid(size:0..255)
+      tipo(size:0..255)
     }
-	
+
 	static mapping = {
 		texto type: 'text'
 	}
-	
+
 	def beforeInsert = {
 		fechaString = getTimeString(fecha)
 	}
-	
+
 	String getTimeString(Date date)
 	{
 		String timeToString = "";
-		
+
 		Calendar cal1 = Calendar.getInstance();
 		Calendar cal2 = Calendar.getInstance();
-		
+
 		cal1.setTime(date);
 		cal2.setTime(new Date());
-		
+
 		def milis1 = cal1.getTimeInMillis();
 		def milis2 = cal2.getTimeInMillis();
-		
+
 		def diff = milis2 - milis1;
-		
+
 		// Calculamos la diferencia en segundos
 		def diffSeconds = diff / 1000;
 		if(diffSeconds < 60)
@@ -80,7 +84,7 @@ class Notification {
 				}
 			}
 		}
-		
+
 		return timeToString;
 	}
 }

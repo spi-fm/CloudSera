@@ -5,8 +5,9 @@
 
         <%-- Head Meta --%>
 		<g:render template="headMeta" contextPath="/"/>
-		
+
         <title>Login for Mendeley</title>
+        <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
@@ -31,26 +32,32 @@
 
         <!-- Top content -->
         <div class="top-content">
-        	
+
             <div class="inner-bg">
                 <div class="container">
-                	
+
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Systematic Literature Review</strong></h1>
+                            <h1>
+                              <strong>
+                                <g:link controller="index">
+                                  Systematic Review
+                                </g:link>
+                              </strong>
+                            </h1>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                     	<div class="col-sm-3"></div>
                         <div class="col-sm-6">
-                        	
+
                         	<div class="form-box">
 	                        	<div class="form-top">
 	                        		<div class="form-top-left">
 	                        			<h3>Login Mendeley to our site</h3>
 	                            		<p>Enter email and password to log on:</p>
-	                        		</div>	                        		
+	                        		</div>
 	                        		<div class="form-top-right">
 	                        			<i class="fa fa-key"></i>
 	                        		</div>
@@ -74,18 +81,18 @@
 				                    <%--</g:form> --%>
 			                    </div>
 		                    </div>
-		                	                        
+
                         </div>
                         <div class="col-sm-3"></div>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
         </div>
 
         <!-- Footer -->
-        
+
 
         <!-- Javascript -->
 	    <g:render template="javascript" contextPath="/"/>
@@ -93,7 +100,7 @@
         <script src="assets/bootstrap/js/bootstrap.min.js"></script> -->
         <script src="${resource(dir: 'js', file: 'jquery.backstretch.min.js')}"></script>
         <script src="${resource(dir: 'js', file: 'scripts.js')}"></script>
-        
+
         <!--[if lt IE 10]>
             <script src="../js/placeholder.js"></script>
         <![endif]-->

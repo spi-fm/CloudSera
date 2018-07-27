@@ -12,11 +12,11 @@ class User implements Serializable {
 	boolean accountExpired
 	boolean accountLocked
 	boolean passwordExpired
-	
+
 	// Campos adicionales
 	UserProfile userProfile
 	UserMendeley userMendeley
-	
+
 	User(String username, String password) {
 		this()
 		this.username = username
@@ -47,9 +47,8 @@ class User implements Serializable {
 	}
 
 	def beforeUpdate() {
-		if (isDirty('password')) {
+		if (isDirty('password'))
 			encodePassword()
-		}
 	}
 
 	protected void encodePassword() {
@@ -59,8 +58,8 @@ class User implements Serializable {
 	static transients = ['springSecurityService']
 
 	static constraints = {
-		username email: true, blank: false, unique: true
-		password blank: false
+		username size:0..255, email: true, blank: false, unique: true
+		password size:0..255, blank: false
 	}
 
 	static mapping = {

@@ -9,7 +9,8 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Criterions</title>
+    <title>CloudSERA | Criterions</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
@@ -19,7 +20,7 @@
 		{
 			document.getElementById("idCriterion").value = id.toString();
 			document.getElementById('divErrorCriterion').style.display = "none";
-		}	
+		}
 		function getCriterionForEdit(id,name,description)
 		{
 			document.getElementById("idEditCriterion").value = id.toString();
@@ -100,7 +101,7 @@
 		    </div>
 		</div>
     </div>
-    
+
     <%--Ventana modal editar criterio --%>
 	<div class="modal fade" id="myModalEditCriterion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="modal-dialog">
@@ -163,27 +164,27 @@
 			</div>
 		</div>
 	</div>
-	
+
     <div id="wrapper">
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Criterions in ${slrInstance.title}</h1>
-                    
+
                     <ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li><g:link controller="slr" action="myList">My SLR's</g:link></li>
+					  <li><g:link controller="slr" action="myList">My Reviews</g:link></li>
 					  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 					  <li class="active">Criterions</li>
 					</ol>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-                        
+
             <div class="row">
                 <div id="divSuccessCriterion" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Criterion created.</div>
             	<div id="divSuccessEditCriterion" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Criterion edited.</div>
@@ -229,8 +230,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -243,10 +244,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-mycriterions').DataTable({

@@ -9,7 +9,8 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Searchs</title>
+    <title>CloudSERA | Searchs</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
@@ -59,27 +60,27 @@
 			</div>
 		</div>
 	</div>
-	
+
     <div id="wrapper">
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Searchs in ${slrInstance.title}</h1>
-                    
+
                     <ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li><g:link controller="slr" action="myList">SLR List</g:link></li>
+					  <li><g:link controller="slr" action="myList">Review List</g:link></li>
 					  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 					  <li class="active">Searchs</li>
 					</ol>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-                        
+
             <div class="row">
             	<div id="divSearchCreating" class="alert alert-info alert-dismissible" role="alert" style="display: none;">
             		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -135,8 +136,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -152,10 +153,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-mysearchs').DataTable({

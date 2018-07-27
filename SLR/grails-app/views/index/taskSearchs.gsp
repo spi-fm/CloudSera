@@ -6,8 +6,9 @@
     <%-- Head Meta --%>
     <g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Searchs in progress</title>
-    
+    <title>CloudSERA | Searchs in progress</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
+
     <%-- CSS --%>
     <g:render template="css" contextPath="/"/>
 
@@ -16,19 +17,19 @@
 <body>
 
 	<div id="wrapper">
-	
+
 		<%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        	
+
 		<div id="page-wrapper">
-		
+
 			<g:include controller='index' action='loadTaskSearchs' />
-		
+
         </div>
-        
+
         <%-- Foot --%>
         <g:render template="foot" contextPath="/"/>
-        
+
 	</div>
 
 <%-- JavaScript --%>
@@ -37,7 +38,7 @@
 <script type="text/javascript">
 	$(document).ready(
 	           function() {
-	               setInterval(function() { 
+	               setInterval(function() {
 	               $('#page-wrapper').load("${createLink(controller: 'index', action: 'loadTaskSearchs')}"); //'/SLR/index/loadTaskSearchs'
 	               }, 10000);
 	           });

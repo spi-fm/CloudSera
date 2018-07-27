@@ -7,12 +7,12 @@ class DataBaseJob {
     }
 
     def execute() {
-		
-        def userListInstance = User.list()
+
+    def userListInstance = User.list()
 		def slrListInstance = Slr.list()
-		
+
 		Statistics statistics = Statistics.findByCodeLike('1')
-		
+
 		if(statistics == null)
 		{
 			statistics = new Statistics(totalSlrs: slrListInstance.size(), totalUsers: userListInstance.size(), code: '1')
@@ -22,9 +22,9 @@ class DataBaseJob {
 			statistics.totalSlrs = slrListInstance.size()
 			statistics.totalUsers = userListInstance.size()
 		}
-		
+
 		statistics.save(failOnError: true, flush: true)
-		
+
 		log.info "Actualizando conexion BD => Hay " + userListInstance.size() + " usuarios y " + slrListInstance.size() + " revisiones sistematicas."
     }
 }

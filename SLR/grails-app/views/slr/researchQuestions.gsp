@@ -9,7 +9,8 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Research Questions</title>
+    <title>CloudSERA | Research Questions</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
@@ -82,7 +83,7 @@
 				    		<table>
 				    			<tr>
 				    				<td><b>Statement:</b></td>
-				    				<td><input id="enunciado" type="text" name="enunciado" class="form-control" value="${enunciadoQuestion}" /></td>
+				    				<td><input id="enunciado" type="text" name="enunciado" size=55 class="form-control" value="${enunciadoQuestion}" /></td>
 				    			</tr>
 				    		</table>
 				    	</div>
@@ -95,7 +96,7 @@
 		    </div>
 		</div>
     </div>
-    
+
     <%--Ventana modal editar question --%>
 	<div class="modal fade" id="myModalEditQuestion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="modal-dialog">
@@ -151,27 +152,27 @@
 			</div>
 		</div>
 	</div>
-	
+
     <div id="wrapper">
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Researchs Questions in ${slrInstance.title}</h1>
-                    
+
                     <ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li><g:link controller="slr" action="myList">SLR List</g:link></li>
+					  <li><g:link controller="slr" action="myList">Review List</g:link></li>
 					  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 					  <li class="active">Researchs Questions</li>
 					</ol>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-                        
+
             <div class="row">
                 <div id="divSuccessQuestion" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Research question created correctly.</div>
             	<div id="divSuccessEditQuestion" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Research question edited correctly.</div>
@@ -205,8 +206,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -222,10 +223,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-myquestions').DataTable({

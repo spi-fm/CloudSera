@@ -3,10 +3,11 @@
   <head>
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
-	
+
     <link rel="icon" href="favicon.ico">
 
     <title>Carousel Template for Bootstrap</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,7 +24,7 @@
 
     <!-- Custom styles for this template -->
     <link href="bower_components/bootstrap/dist/css/carousel.css" rel="stylesheet">
-    
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -82,7 +83,7 @@
           <img class="first-slide" src="${resource(dir:'images/galery_index', file:'portada1.jpg')}" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Systematic Literature Review.</h1>
+              <h1>Systematic Review.</h1>
               <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign up today</g:link></p>
             </div>
@@ -92,7 +93,7 @@
           <img class="second-slide" src="${resource(dir:'images/galery_index', file:'portada2.jpg')}" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Systematic Literature Review.</h1>
+              <h1>Systematic Review.</h1>
               <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign up today</g:link></p>
             </div>
@@ -102,7 +103,7 @@
           <img class="third-slide" src="${resource(dir:'images/galery_index', file:'portada3.jpg')}" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Systematic Literature Review.</h1>
+              <h1>Systematic Review.</h1>
               <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
               <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign up today</g:link></p>
             </div>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
+
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
-    
-    <link rel="icon" href="favicon.ico">
 
-    <title>Systematic Literature Review</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
+
+    <title>CloudSERA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
     <!-- Custom styles for this template -->
     <link href="bower_components/bootstrap/dist/css/carousel.css" rel="stylesheet">
-    
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -41,7 +41,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Systematic Literature Review</a>
+              <a class="navbar-brand" href="#">CloudSERA</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <!-- <ul class="nav navbar-nav">
@@ -84,9 +84,9 @@
           <img class="first-slide" src="${resource(dir:'images/galery_index', file:'portada1.jpg')}" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Systematic Literature Review.</h1>
-              <p>Web for the creation of systematic literature reviews for the University of Cádiz, based on Mendeley</p>
-              <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign up today</g:link> <g:link class="btn btn-lg btn-success" role="button" controller="register">Register now</g:link></p>
+              <img src="https://raw.githubusercontent.com/spi-fm/CloudSERA/master/images/CloudSERA-sm.jpeg"/>
+              <p>Tool for supporting systematic reviews, both systematic literature reviews and systematic mappings.</p>
+              <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign in</g:link> <g:link class="btn btn-lg btn-success" role="button" controller="register">Register</g:link></p>
             </div>
           </div>
         </div>
@@ -94,9 +94,9 @@
           <img class="second-slide" src="${resource(dir:'images/galery_index', file:'portada2.jpg')}" alt="Second slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Systematic Literature Review.</h1>
-              <p>Web for the creation of systematic literature reviews for the University of Cádiz, based on Mendeley</p>
-              <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign up today</g:link> <g:link class="btn btn-lg btn-success" role="button" controller="register">Register now</g:link></p>
+              <img src="https://raw.githubusercontent.com/spi-fm/CloudSERA/master/images/CloudSERA-sm.jpeg"/>
+              <p>Tool for supporting systematic reviews, both systematic literature reviews and systematic mappings.</p>
+              <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign in</g:link> <g:link class="btn btn-lg btn-success" role="button" controller="register">Register</g:link></p>
             </div>
           </div>
         </div>
@@ -104,9 +104,9 @@
           <img class="third-slide" src="${resource(dir:'images/galery_index', file:'portada3.jpg')}" alt="Third slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Systematic Literature Review.</h1>
-              <p>Web for the creation of systematic literature reviews for the University of Cádiz, based on Mendeley</p>
-              <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign up today</g:link> <g:link class="btn btn-lg btn-success" role="button" controller="register">Register now</g:link></p>
+              <img src="https://raw.githubusercontent.com/spi-fm/CloudSERA/master/images/CloudSERA-sm.jpeg"/>
+              <p>Tool for supporting systematic reviews, both systematic literature reviews and systematic mappings.</p>
+              <p><g:link class="btn btn-lg btn-primary" role="button" controller="login">Sign in</g:link> <g:link class="btn btn-lg btn-success" role="button" controller="register">Register</g:link></p>
             </div>
           </div>
         </div>
@@ -133,7 +133,7 @@
         <div class="col-lg-4">
           <img class="img-circle" src="https://pbs.twimg.com/profile_images/876736380801568768/ld3Nygxz.jpg" alt="Generic placeholder image" width="140" height="140">
           <h2>Universidad de Cádiz</h2>
-          <p>Systematic Literature Review is a project created in the <a href="http://esingenieria.uca.es/">High School of Engineering</a> from University of Cádiz.</p>
+          <p>Systematic Review is a project created in the <a href="http://esingenieria.uca.es/">High School of Engineering</a> from University of Cádiz.</p>
           <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p> -->
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
@@ -150,28 +150,42 @@
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 	  <div class="row">
-        <div class="col-lg-4">
-          <img class="img-rounded" src="${resource(dir:'images/index', file:'imgHeader3.png')}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Mendeley</h2>
-          <p>All references founds will be imported directly in your account of <a href="https://www.mendeley.com/">Mendeley</a>. You can also synchronizate between both plataforms of a simple and confortable way.</p>
-          <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="${resource(dir:'images/index', file:'imgHeader4.png')}" alt="Generic placeholder image" width="140" height="140">
-          <h2>Google Chart</h2>
-          <p>The web application offers to the user the posibility of create graphs for extract finals conclusions of SLR. These SLR are created with the API of <a href="https://developers.google.com/chart/">Google Chart</a>.</p>
-          <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <img class="img-circle" src="${resource(dir:'images/index', file:'imgHeader6.ico')}" alt="Generic placeholder image" width="140" height="140">
-          <h2>About us</h2>
-          <p>You can click <g:link controller="index" action="about">here</g:link> for know more about this web.</p>
-          <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+      <div class="col-lg-4">
+        <img class="img-rounded" src="${resource(dir:'images/index', file:'imgHeader3.png')}" alt="Generic placeholder image" width="140" height="140">
+        <h2>Mendeley</h2>
+        <p>All references founds will be imported directly in your account of <a href="https://www.mendeley.com/">Mendeley</a>. You can also synchronizate between both plataforms of a simple and confortable way.</p>
+        <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="${resource(dir:'images/index', file:'imgHeader4.png')}" alt="Generic placeholder image" width="140" height="140">
+        <h2>Google Chart</h2>
+        <p>The web application offers to the user the posibility of create graphs for extract finals conclusions of Review. These Review are created with the API of <a href="https://developers.google.com/chart/">Google Chart</a>.</p>
+        <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="img-circle" src="${resource(dir:'images/index', file:'imgHeader6.ico')}" alt="Generic placeholder image" width="140" height="140">
+        <h2>About us</h2>
+        <p>You can click <g:link controller="index" action="about">here</g:link> for know more about this web.</p>
+        <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+  <div class="row">
+    <div class="col-lg-4">
+      <img class="img-rounded" src="${resource(dir:'images/index', file:'tutorial.jpg')}" alt="Generic placeholder image" width="140" height="140">
+      <h2>Tutorial</h2>
+      <p>A simple tutorial to get you started with our app! </BR>Click <a href="http://ior.ad/vgz">here</a></p>
+      <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
+    </div><!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <img class="img-circle" src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="Generic placeholder image" width="140" height="140">
+      <h2>Developer's Page</h2>
+      <p>You can view our code <a href="https://github.com/spi-fm/CloudSERA">here</a>.</p>
+      <!--<p><a class="btn btn-default" href="#" role="button">Ver más &raquo;</a></p>-->
+    </div><!-- /.col-lg-4 -->
+  </div><!-- /.row -->
 
       <!-- START THE FEATURETTES -->
-<!-- 
+<!--
        <hr class="featurette-divider">
 
       <div class="row featurette">

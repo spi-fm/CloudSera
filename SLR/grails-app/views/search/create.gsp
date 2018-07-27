@@ -9,11 +9,12 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Create Search</title>
+    <title>CloudSERA | Create Search</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
-    
+
     <script type="text/javascript">
 	    function loadError()
 		{
@@ -52,7 +53,7 @@
 			{
 				document.getElementById("engineAll").checked = true;
 			}
-			else if (!isAllSelected() && document.getElementById("engineAll").checked) 
+			else if (!isAllSelected() && document.getElementById("engineAll").checked)
 			{
 				document.getElementById("engineAll").checked = false;
 			}
@@ -67,14 +68,14 @@
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Create search <small>${slrInstance.title}</small></h1>
                     <ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li><g:link controller="slr" action="myList">SLR List</g:link></li>
+					  <li><g:link controller="slr" action="myList">Review List</g:link></li>
 					  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 					  <li><g:link controller="slr" action="searchs" params="[guid: "${slrInstance.guid}"]">Searchs</g:link></li>
 					  <li class="active">Create Search</li>
@@ -82,13 +83,13 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            
+
             <div class="row">
 				<div id="divError" class="alert alert-danger" role="alert" style="display: none;"><i class="fa fa-remove fa-fw"></i> ${error}</div>
 			</div>
-		
+
 			<g:form class="form-horizontal" controller="search" action="save" method="POST" name="myForm" id="myForm">
-			
+
 				<g:hiddenField name="guidSlr" value="${slrInstance.guid}" />
 
 				<%-- Engines --%>
@@ -123,7 +124,7 @@
 						 </div>
 					</div>
 				</div>
-				
+
 				<%-- Total busquedas y Rango años --%>
 				<div class="row">
 					<div class="col-lg-12">
@@ -143,16 +144,16 @@
 						    <div class="col-sm-2" style="margin-top: 15px;">
 						    	<input id="inputYears" name="inputYears" type="hidden" class="range-slider" value="${minYearSearch},${maxYearSearch}" />
 							</div>
-							
+
 						  </div>
 					</div>
 					<div class="col-lg-6">
 					</div>
 				</div>
-				
+
 				<%-- Terminos --%>
 				<div class="row input_fields_wrap">
-					<button class="btn btn-primary add_field_button" style="margin-bottom: 20px; margin-left: 15px;">Insert more terms</button>	
+					<button class="btn btn-primary add_field_button" style="margin-bottom: 20px; margin-left: 15px;">Insert more terms</button>
 					<div class="form-inline">
 						<div class="col-lg-10">
 							<label for="selectComponent" style="margin-right: 10px;">Find</label>
@@ -166,21 +167,21 @@
 									<option value="${operatorInstance.value}">${operatorInstance.name}</option>
 								</g:each>
 							</select>
-							these terms: 
+							these terms:
 							<input type="text" class="form-control" name="inputTerminos" value="" style="width: 250px;" />
 						</div>
 						<div class="col-lg-2">
 						</div>
 					</div>
 				</div>
-				
+
 				<%-- Submit --%>
 				<div class="row" style="margin-top: 50px;">
 					<div class="col-lg-12">
 						<g:submitButton id="boton" name="boton" class="btn btn-success" value="Create Search" />
 					</div>
 				</div>
-				
+
 			</g:form>
 
         </div>
@@ -212,7 +213,7 @@
 	        var max_fields      = 10; //maximum input boxes allowed
 	        var wrapper         = $(".input_fields_wrap"); //Fields wrapper
 	        var add_button      = $(".add_field_button"); //Add button ID
-	        	        
+
 	        var x = 1; //initlal text box count
 	        $(add_button).click(function(e){ //on add input button click
 	            e.preventDefault();
@@ -222,7 +223,7 @@
 	                $(wrapper).append("<div class=\"form-inline\"><div class=\"col-lg-10\"><label for=\"exampleInputName2\">Find</label><select class=\"form-control\" style=\"margin-left: 15px;\" id=\"selectComponent\" name=\"selectComponent\">${strOptionsComponents.encodeAsJavaScript()}</select><select class=\"form-control\" style=\"margin-left: 5px; margin-right: 5px;\" id=\"selectOperator\" name=\"selectOperator\">${strOptionsOperators.encodeAsJavaScript()}</select>these terms:<input type=\"text\" class=\"form-control\" style=\"margin-left: 4px; width: 250px;\" id=\"inputTerminos\" name=\"inputTerminos\" value=\"\" style=\"width: 250px;\" /><a href=\"#\" class=\"remove_field btn btn-default btn-circle\" style=\"margin-left: 15px;\"><i class=\"fa fa-times\"></i></a></div><div class=\"col-lg-2\"></div></div>");
 	            }
 	        });
-	        
+
 	        $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
 	            e.preventDefault(); $(this).parent('div').remove(); x--;
 	        })

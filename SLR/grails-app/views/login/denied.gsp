@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row">
     <div class="error-template">
-	    <h1>Systematic Literature Review</h1>
+	    <h1>Systematic Review</h1>
 	    <h2>Restricted Access</h2>
 	    <div class="error-details" style="padding-top: 20px;">
 			You have tried to access any page no authorized or there are any problem.

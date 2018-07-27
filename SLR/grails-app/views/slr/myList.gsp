@@ -8,7 +8,8 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | My List</title>
+    <title>CloudSERA | My List</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
@@ -97,7 +98,7 @@
 			}
 		}
 	</script>
-	
+
 </head>
 
 <body onload="loadModal();">
@@ -108,7 +109,7 @@
 	    	<div class="modal-content">
 	    		<div class="modal-header">
       				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      				<h4 class="modal-title" id="myModalLabel">Create SLR</h4>
+      				<h4 class="modal-title" id="myModalLabel">Create Review</h4>
 			    </div>
 		    	<g:form controller="slr" action="save" method="POST" name="myForm" id="myForm">
 		    		<div class="modal-body">
@@ -119,7 +120,7 @@
 				    		<table>
 				    			<tr style="padding-bottom: 20px;">
 				    				<td><b>Title:</b></td>
-				    				<td><div id="in-tit-slr" class="input-group"><span class="input-group-addon" id="basic-addon1">SLR</span><input id="titulo" type="text" name="titulo" class="form-control" value="${tituloSlr}" aria-describedby="in-tit-slr" style="width: 350px;" /></div></td>
+				    				<td><div id="in-tit-slr" class="input-group"><span class="input-group-addon" id="basic-addon1">Review</span><input id="titulo" type="text" name="titulo" class="form-control" value="${tituloSlr}" aria-describedby="in-tit-slr" style="width: 350px;" /></div></td>
 				    			</tr>
 				    			<tr>
 				    				<td><b>Justification:</b></td>
@@ -130,48 +131,48 @@
 				    </div>
 				    <div class="modal-footer">
 						<button class="btn btn-default" data-dismiss="modal" type="button">Close</button>
-						<g:submitButton name="create" class="btn btn-primary" value="Crear Slr" onclick="closeModalWithMessage('myModal','Creating SLR...');" />
+						<g:submitButton name="create" class="btn btn-primary" value="Crear Slr" onclick="closeModalWithMessage('myModal','Creating Review...');" />
 					</div>
 				</g:form>
 		    </div>
 		</div>
     </div>
-    
+
     <%-- Ventana modal para eliminar slr --%>
     <div class="modal fade" id="myModalDrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Delete SLR</h4>
+					<h4 class="modal-title" id="myModalLabel">Delete Review</h4>
 				</div>
 				<%--<g:form url="[action:'delete']" method="DELETE"> --%>
 				<g:form controller="slr" action="delete" id="myFormDelete" name="myFormDelete" method="DELETE">
 					<g:hiddenField name="guidSlr" value="0" />
 					<div class="modal-body">
-						Do you delete this SLR ?
+						Do you really want to delete this Review ?
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-default" data-dismiss="modal" type="button">No</button>
 						<!--<g:submitButton id="boton" name="boton" class="btn btn-primary" value="Sí"/>-->
-						<g:submitButton id="boton" name="boton" class="btn btn-primary" value="Yes" onclick="closeModalWithMessage('myModalDrop','Deleting SLR...');" />
+						<g:submitButton id="boton" name="boton" class="btn btn-primary" value="Yes" onclick="closeModalWithMessage('myModalDrop','Deleting Review...');" />
 					</div>
 				</g:form>
 			</div>
 		</div>
 	</div>
-	
+
 	<%-- Ventana modal para sincronizar slr's --%>
     <div class="modal fade" id="myModalSynchro" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Synchronize SLR</h4>
+					<h4 class="modal-title" id="myModalLabel">Synchronize Review</h4>
 				</div>
 				<div class="modal-body">
 					<b>Warning:</b> If you do the synchro all information will be replaced with Mendeley's info.
-					If the web has any information of any SLR or reference that are deletes in Mendeley, will be deletes.
+					If the web has any information of any Review or reference that are deletes in Mendeley, will be deletes.
 					<p>Do you want to continue with the synchronization ?</p>
 				</div>
 				<div class="modal-footer">
@@ -185,31 +186,31 @@
     <div id="wrapper">
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-                
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">My SLR List</h1>
-                    
+                    <h1 class="page-header">My Review List</h1>
+
            			<ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li class="active">Slr List</li>
+					  <li class="active">Review List</li>
 					</ol>
-					
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
 
             <div class="row">
-		    	<div id="divSuccess" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> SLR creaded correctly.</div>
+		    	<div id="divSuccess" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Review creaded correctly.</div>
             	<div id="divSuccessCriterion" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Criterion created correctly.</div>
             	<div id="divSuccessAttribute" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Attribute created correctly</div>
             	<div id="divSuccessQuestion" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Research question created correctly.</div>
             	<div id="divErrorSynchro" class="alert alert-danger" role="alert" style="display: none;"><i class="fa fa-remove fa-fw"></i> Synchro problems. Try later.</div>
             	<div class="col-lg-12">
                 	<div style="margin-top: 5px; margin-bottom: 20px;">
-	                	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Create SLR</button>
-	                	<g:link type="button" class="btn btn-success" controller="wizardSlr" action="createSLR">Create SLR (with wizard)</g:link>
+	                	<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Create Review</button>
+	                	<g:link type="button" class="btn btn-success" controller="wizardSlr" action="createSLR">Create Review (with wizard)</g:link>
 	                	<!--<g:link type="button" class="btn btn-primary" controller="slr" action="syncronizeListSlrMendeley" onclick="loading('Sincronizando con Mendeley...');">Sincronizar (Mendeley)</g:link>-->
 	                	<button title="Sincronizar (Mendeley)" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModalSynchro">Sinchronize (Mendeley)</button>
 	                	<button type="button" class="btn btn-info" data-html="true" data-toggle="popover" title="Información"><i class="fa fa-info"></i> Info</button>
@@ -220,8 +221,8 @@
                                 <th>Title</th>
                                 <th>State</th>
                                 <th>Created</th>
-                                <th>Nº Searches</th>
-                                <th>Nº References</th>
+                                <th>Number of Searches</th>
+                                <th>Number of References</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -263,7 +264,7 @@
 										<g:link title="Specific Attributes" class="btn btn-outline btn-primary btn-circle" controller="slr" action="specAttributes" params="[guid: "${slrInstance.guid}"]"><i class="glyphicon glyphicon-tags"></i></g:link>
 										<g:link title="Searchs" type="button" class="btn btn-outline btn-primary btn-circle" controller="slr" action="searchs" params="[guid: "${slrInstance.guid}"]"><i class="glyphicon glyphicon-search"></i></g:link>
 										<g:if test="${slrInstance.noDrop == false}">
-											<button title="Delete SLR" type="button" class="btn btn-outline btn-danger btn-circle" data-toggle="modal" data-target="#myModalDrop" onclick="getIdSlr('${slrInstance.guid}')"><i class="fa fa-times"></i></button>
+											<button title="Delete Review" type="button" class="btn btn-outline btn-danger btn-circle" data-toggle="modal" data-target="#myModalDrop" onclick="getIdSlr('${slrInstance.guid}')"><i class="fa fa-times"></i></button>
 										</g:if>
 										<p> </p>
 										<g:link title="Export Excel" type="button" class="btn btn-outline btn-success btn-circle" controller="slr" action="exportToExcel" params="[guid: "${slrInstance.guid}"]"><i class="fa fa-file-excel-o"></i></g:link>
@@ -275,8 +276,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -292,10 +293,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 		<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-myslrs').DataTable({
@@ -303,7 +304,7 @@
 	        });
 	        $('[data-toggle="popover"]').popover({
 	        	content: '<g:render template="slrInfo" contextPath="/slr"/>'
-	        }); 
+	        });
 	    });
     </script>
 

@@ -8,11 +8,12 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Usuarios</title>
+    <title>CloudSERA | Users</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
-    
+
     <script type="text/javascript">
 	function getIdUser(id)
 	{
@@ -22,11 +23,11 @@
 		document.getElementById("guidUserRoleUser").value = id.toString();
 	}
     </script>
-    
+
 </head>
 
 <body>
-	
+
 	<div class="modal fade" id="myModalEnabled" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -47,7 +48,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade" id="myModalDisabled" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -68,7 +69,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade" id="myModalAdminRole" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -89,7 +90,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="modal fade" id="myModalUserRole" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -110,12 +111,12 @@
 			</div>
 		</div>
 	</div>
-	
+
     <div id="wrapper">
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -123,7 +124,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-                        
+
             <div class="row">
                 <div class="col-lg-12">
 
@@ -150,13 +151,15 @@
                             		<td>${i+1}</td>
                             		<td>
                             			<g:if test="${userInstance.userProfile.isOnline}">
-	                            			<i class="fa fa-user fa-fw" style="color: green;"></i> ${userInstance.userProfile.display_name}
+	                            			<i class="fa fa-user fa-fw" style="color: green;"></i>
+																		<g:link controller="user" action="show" params="[guid: "${userInstance.userProfile.guid}"]">${userInstance.userProfile.display_name}</g:link>
                             			</g:if>
                             			<g:else>
-                            				<i class="fa fa-user fa-fw" style="color: blue;"></i> ${userInstance.userProfile.display_name}
+                            				<i class="fa fa-user fa-fw" style="color: blue;"></i>
+																		<g:link controller="user" action="show" params="[guid: "${userInstance.userProfile.guid}"]">${userInstance.userProfile.display_name}</g:link>
                             			</g:else>
                             		</td>
-                            		<td><g:link controller="user" action="show" params="[guid: "${userInstance.userProfile.guid}"]">${userInstance.username}</g:link></td>
+                            		<td>${userInstance.username}</td>
                             		<g:if test="${roleUserLogin != "U"}">
                             		<td>${userInstance.enabled ? "Enabled" : "Disabled"}</td>
                             		</g:if>
@@ -186,8 +189,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -203,10 +206,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-users').DataTable({

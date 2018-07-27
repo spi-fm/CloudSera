@@ -3,9 +3,10 @@
   <head>
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
-    <title>Systematic Literature Review</title>
+    <title>CloudSERA</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
   </head>
-  
+
 <body>
 </body>
 

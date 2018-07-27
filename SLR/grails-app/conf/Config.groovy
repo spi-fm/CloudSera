@@ -103,7 +103,7 @@ log4j.main = {
         //console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
 		console name: 'stdout', layout: pattern(conversionPattern: '%d{yyyy-MM-dd HH:mm:ss} %-5p [%c{2}] %m%n')
     }
-	
+
 	info 'grails.app'
 
     error  'org.codehaus.groovy.grails.web.servlet',        // controllers
@@ -181,21 +181,21 @@ grails.plugin.springsecurity.onInteractiveAuthenticationSuccessEvent = { e, appC
 // Customize authentication
 grails.plugin.springsecurity.providerNames = ['customAuthenticationProvider','anonymousAuthenticationProvider','rememberMeAuthenticationProvider']
 
-// Parámetros de configuración API Mendeley Localhost
-//mendeley.api.clientId = '4347'
-//mendeley.api.clientSecret = 'XJZuvpCKISNcnLBo'
-//mendeley.api.redirectUri = 'http://localhost:8080/SLR/indexMendeley/'
-//mendeley.api.totalHilos = 5
-//mendeley.api.totalTries = 3
-
-//// Parámetros de configuración API Mendeley UCA
-mendeley.api.clientId = '4382'
-mendeley.api.clientSecret = 'z5UpXugjrevgcE17'
-mendeley.api.redirectUri = 'http://slr.uca.es/indexMendeley/'
+// Parï¿½metros de configuraciï¿½n API Mendeley Localhost
+mendeley.api.clientId = '5373'
+mendeley.api.clientSecret = '98UMXqr2eShFDgij'
+mendeley.api.redirectUri = 'http://localhost:8080/SLR/indexMendeley/'
 mendeley.api.totalHilos = 5
 mendeley.api.totalTries = 3
 
-//// Parámetros de configuración API Mendeley Vultr
+//// Parï¿½metros de configuraciï¿½n API Mendeley UCA
+//mendeley.api.clientId = '5373'
+//mendeley.api.clientSecret = '0huZTNK1xRHumCct'
+//mendeley.api.redirectUri = 'localhost:8080'
+//mendeley.api.totalHilos = 5
+//mendeley.api.totalTries = 3
+
+//// Parï¿½metros de configuraciï¿½n API Mendeley Vultr
 //mendeley.api.clientId = '1044'
 //mendeley.api.clientSecret = 'N1krjxVLCiflzZTt'
 //mendeley.api.redirectUri = 'http://45.76.94.16/indexMendeley/'

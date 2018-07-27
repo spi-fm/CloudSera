@@ -7,11 +7,12 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Errors in Searchs</title>
+    <title>CloudSERA | Errors in Searchs</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
-	
+
 	<script type="text/javascript">
 		function showException(strException, code)
 		{
@@ -21,7 +22,7 @@
 			modal.modal('show')
 		}
 	</script>
-	
+
 </head>
 
 <body>
@@ -49,17 +50,17 @@
     <div id="wrapper">
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-                
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Errors in Searchs</h1>
-                    
+
            			<ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
 					  <li class="active">Errors in Searchs</li>
 					</ol>
-					
+
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -85,8 +86,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -102,10 +103,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-mytaskWithErrors').DataTable({

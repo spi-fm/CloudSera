@@ -6,25 +6,25 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header" style="width: 500px;">
         <g:link class="navbar-brand" controller="index" action="index" style="font-size: 25px;">
-        	${(request.forwardURI.contains("references") ? 'SLR' : 'Systematic Literature Review')}
+        	${(request.forwardURI.contains("references") ? 'SLR' : 'CloudSERA')}
         </g:link>
-        
+
         <%-- Aqui incluimos las opciones en caso de estar en references --%>
-        
-        
+
+
     </div>
     <!-- /.navbar-header -->
-    
+
     <ul class="nav navbar-top-links navbar-right">
 
         <li id="liTemplate" class="dropdown">
 	        <g:include controller='index' action='loadNotifications' />
         </li>
-        
+
         <li id="liSearchTask" class="dropdown">
 	        <g:include controller='index' action='loadTaskSearchsHead' />
         </li>
-        
+
         <!-- <li class="dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
@@ -100,7 +100,7 @@
             <!-- /.dropdown-user -->
         </li>
         <!-- /.dropdown -->
-    </ul>   
+    </ul>
     <!-- /.navbar-top-links -->
 
     <div class="navbar-form navbar-right">
@@ -113,20 +113,20 @@
 				</span>
 	       		<input id="query" name="query" type="text" class="form-control" style="width: 300px;" placeholder="<g:message code='pfc.searcher.placeholder' locale='${languageDefault}' />">
 		   </div>
-	     </g:form>    
+	     </g:form>
     </div>
 
 
 	<%-- Head --%>
     <g:render template="menuleft" contextPath="/"/>
-    
+
     <!-- /.navbar-static-side -->
 </nav>
 
 <script type="text/javascript">
 	$(document).ready(
 	           function() {
-	               setInterval(function() { 
+	               setInterval(function() {
 	               $('#liTemplate').load('/SLR/index/loadNotifications');
 	               $('#liSearchTask').load('/SLR/index/loadTaskSearchsHead');
 	               }, 10000);

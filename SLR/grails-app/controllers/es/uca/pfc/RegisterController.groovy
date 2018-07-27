@@ -5,9 +5,9 @@ class RegisterController {
 	def springSecurityService
 	def mendeleyToolService
 	def toolService
-	
-    def index() { 
-		
+
+    def index() {
+
 		if(springSecurityService.isLoggedIn())
 		{
 			redirect(controller: 'index', action: 'index')
@@ -15,23 +15,23 @@ class RegisterController {
 		else
 		{
 			def emailMend = (params.emailMend == null ? "" : params.emailMend.toString())
-		
+
 			[emailMend: emailMend]
 		}
 	}
-		
+
 	def registerUser() {
-		
+
 		def emailMend    = (params.j_email_mend == null ? "" : params.j_email_mend.toString())
 		def passMend     = (params.j_pass_mend == null ? "" : params.j_pass_mend.toString())
 		def passMendRep  = (params.j_pass_mend_rep == null ? "" : params.j_pass_mend_rep.toString())
-		
+
 		log.info 'El usuario ' + emailMend + ' procede a realizar el registro'
-		
+
 		def error = ""
-		
+
 		def userRepeatInstance = User.findByUsernameLike(emailMend)
-		
+
 		if (emailMend.equals("") || passMend.equals("") || passMendRep.equals("")) {
 			error = "Error: There are empty fields"
 		}
@@ -44,7 +44,7 @@ class RegisterController {
 		else if (userRepeatInstance != null) {
 			error = "User registered in the application."
 		}
-		
+
 		if(error.equals(""))
 		{
 			if(!mendeleyToolService.isRegisteredMendeley(emailMend, passMend))
@@ -52,10 +52,10 @@ class RegisterController {
 				error = "Error: Incorrect login in Mendeley. Verify yours credentials or try again later."
 			}
 		}
-		
+
 		if(error.equals("")) {
 			User userInstance = mendeleyToolService.getUserFromMendeley(emailMend, passMend)
-			
+
 			if(userInstance == null)
 			{
 				log.info "El usuario no existe en Mendeley => userInstance == null"
@@ -64,22 +64,22 @@ class RegisterController {
 			}
 			else if (!userInstance.validate())
 			{
-				log.info "El usuario no es válido => !userInstance.validate()"
+				log.info "El usuario no es vï¿½lido => !userInstance.validate()"
 				flash.message = "Error: User isn't correct."
 				redirect(controller: 'register', action: 'index', params: [emailMend: emailMend])
 			}
 			else
 			{
 				userInstance.save flush: true
-				
+
 				// Creamos role
-				def userRole = Role.findByAuthority('ROLE_USER')				
+				def userRole = Role.findByAuthority('ROLE_USER')
 				if(userRole == null)
 				{
-					log.info "ROLE_USER debe ser creado"
+					log.info "ROLE_SUPER debe ser creado"
 					userRole = new Role(authority: 'ROLE_USER').save(failOnError: true)
 				}
-				
+
 				if (!userInstance.authorities.contains(userRole)) {
 					// Excepcion de servidor cuando la BBDD supera
 					// el wait_timeout
@@ -89,19 +89,19 @@ class RegisterController {
 						UserRole.create userInstance, userRole
 					}
 					catch(Exception ex) {
-						log.info "Excepcion en la creación de role, se crea de nuevo"
+						log.info "Excepcion en la creaciï¿½n de role, se crea de nuevo"
 						UserRole.create userInstance, userRole
 					}
 				}
-				
+
 				userInstance.save(failOnError: true, flush: true)
-				
+
 				log.info "Usuario registrado: " + userInstance.username +  " => " + userInstance.authorities
-				
+
 				// Hacemos Login automaticamente
 				springSecurityService.reauthenticate(userInstance.username, userInstance.password)
 				redirect(controller: 'index', action: 'index')
-				
+
 				return
 			}
 		}

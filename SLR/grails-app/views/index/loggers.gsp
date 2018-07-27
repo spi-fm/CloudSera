@@ -9,12 +9,13 @@
 	<g:render template="headMeta" contextPath="/"/>
 
     <title>
-   		SLR | My Loggers
+   		CloudSERA | My Loggers
     </title>
-    
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
+
     <%-- CSS --%>
     <g:render template="css" contextPath="/"/>
-    
+
 </head>
 
 <body>
@@ -23,12 +24,12 @@
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
 		    		<h1 class="page-header">My Loggers</h1>
-		    		
+
 			    	<ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
 					  <li class="active">My Loggers</li>
@@ -36,11 +37,11 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            
+
             <div class="row">
-                
+
                 <div class="col-lg-12">
-                
+
                 	<div style="width: 100%;">
 						<ul id="myTab" class="nav nav-tabs">
 							<li class="${(currentOnglet == 'all' ? 'active' : '')}"><a href="#allLoggers" data-toggle="tab">All</a></li>
@@ -49,7 +50,7 @@
 						</ul>
 
 						<div id="myTabContent" class="tab-content" style="margin-top: 20px;">
-					
+
 						<%-- TODOS LOS LOGGERS --%>
 						<div class="tab-pane fade in active" id="allLoggers">
 							<div class="chat-panel panel panel-default">
@@ -90,16 +91,16 @@
 														</div>
 														<p>
 															<g:if test="${loggerInstance.tipo == 'bienvenida'}">
-																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> Welcome to Systematic Literature Review !
+																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> Welcome to Systematic Review !
 															</g:if>
 															<g:elseif test="${loggerInstance.tipo == 'fr-bienvenida'}">
-																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> He's registred in SLR.
+																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> He's registred in SR.
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'crear'}">
-																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> You have created a new SLR: <g:link controller="slr" action="myList">${loggerInstance.slr.title}</g:link>
+																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> You have created a new SR: <g:link controller="slr" action="myList">${loggerInstance.slr.title}</g:link>
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'fr-crear'}">
-																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> He has created a new SLR: ${loggerInstance.slr.title}
+																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> He has created a new SR: ${loggerInstance.slr.title}
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'buscar'}">
 																<img src="${resource(dir:'images/logger',file:'lupa.jpg')}" alt="" width="20" height="20" /> You have created news searchs: <g:link controller="slr" action="searchs" params="[guid: "${loggerInstance.slr.guid}"]">${loggerInstance.slr.title}</g:link>
@@ -126,7 +127,7 @@
 							</div>
 							<g:render template="paginationAllLogger" contextPath="/index"/>
 						</div>
-						
+
 						<%-- LOGGERS FRIENDS --%>
 						<div class="tab-pane fade" id="friendLoggers">
 							<div class="chat-panel panel panel-default">
@@ -167,16 +168,16 @@
 														</div>
 														<p>
 															<g:if test="${loggerInstance.tipo == 'bienvenida'}">
-																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> Welcome to Systematic Literature Review !
+																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> Welcome to Systematic Review !
 															</g:if>
 															<g:elseif test="${loggerInstance.tipo == 'fr-bienvenida'}">
-																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> He's registred in SLR.
+																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> He's registred in SR.
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'crear'}">
-																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> You have created a new SLR: <g:link controller="slr" action="myList">${loggerInstance.slr.title}</g:link>
+																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> You have created a new SR: <g:link controller="slr" action="myList">${loggerInstance.slr.title}</g:link>
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'fr-crear'}">
-																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> He has created a new SLR: ${loggerInstance.slr.title}
+																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> He has created a new SR: ${loggerInstance.slr.title}
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'buscar'}">
 																<img src="${resource(dir:'images/logger',file:'lupa.jpg')}" alt="" width="20" height="20" /> You have created news searchs: <g:link controller="slr" action="searchs" params="[guid: "${loggerInstance.slr.guid}"]">${loggerInstance.slr.title}</g:link>
@@ -203,8 +204,8 @@
 							</div>
 							<g:render template="paginationFriendsLogger" contextPath="/index"/>
 						</div>
-						
-						
+
+
 						<%-- Mis loggers --%>
 						<div class="tab-pane fade" id="myLoggers">
 							<div class="chat-panel panel panel-default">
@@ -245,16 +246,16 @@
 														</div>
 														<p>
 															<g:if test="${loggerInstance.tipo == 'bienvenida'}">
-																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> Welcome to Systematic Literature Review !
+																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> Welcome to Systematic Review !
 															</g:if>
 															<g:elseif test="${loggerInstance.tipo == 'fr-bienvenida'}">
-																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> He's registred in SLR.
+																<img src="${resource(dir:'images/logger',file:'start.png')}" alt="" width="20" height="20" /> He's registred in SR.
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'crear'}">
-																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> You have created a new SLR: <g:link controller="slr" action="myList">${loggerInstance.slr.title}</g:link>
+																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> You have created a new SR: <g:link controller="slr" action="myList">${loggerInstance.slr.title}</g:link>
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'fr-crear'}">
-																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> He has created a new SLR: ${loggerInstance.slr.title}
+																<img src="${resource(dir:'images/logger',file:'libro.jpg')}" alt="" width="20" height="20" /> He has created a new SR: ${loggerInstance.slr.title}
 															</g:elseif>
 															<g:elseif test="${loggerInstance.tipo == 'buscar'}">
 																<img src="${resource(dir:'images/logger',file:'lupa.jpg')}" alt="" width="20" height="20" /> You have created news searchs: <g:link controller="slr" action="searchs" params="[guid: "${loggerInstance.slr.guid}"]">${loggerInstance.slr.title}</g:link>
@@ -281,12 +282,12 @@
 							</div>
 							<g:render template="paginationMyLogger" contextPath="/index"/>
 						</div>
-						
+
 					</div>
-    				</div>            
+    				</div>
                 </div>
             </div>
-                        
+
         </div>
         <!-- /#page-wrapper -->
 

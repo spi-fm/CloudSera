@@ -7,7 +7,8 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | References</title>
+    <title>CloudSERA | References</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
@@ -20,22 +21,22 @@
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">References <small>${slrInstance.title}</small></h1>
-                    
+
                     <ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li><g:link controller="slr" action="myList">SLR List</g:link></li>
+					  <li><g:link controller="slr" action="myList">Review List</g:link></li>
 					  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 					  <li class="active">References</li>
 					</ol>
-					
+
                 </div>
             </div>
-            
+
             <div id="searchresults" class="row">
             	<g:render template="referencesSearchResult" contextPath="/slr"/>
             </div>
@@ -48,7 +49,7 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-    
+
     <script type="text/javascript">
 		$(document).ready(function(){
 	        $('.range-slider').jRange({

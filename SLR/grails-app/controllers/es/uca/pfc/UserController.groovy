@@ -176,18 +176,18 @@ class UserController {
 			redirect(controller: 'index', action: 'index')
 		}
 	}
-	
+
 	def friends()
 	{
 		def isLogin = springSecurityService.loggedIn
-		
+
 		if(isLogin)
 		{
 			def userLogin = User.get(springSecurityService.principal.id)
 
-			def userProfileListInstance = userLogin.userProfile.friends
+			def friendListInstance = userLogin.userProfile.friends
 
-			[userProfileListInstance: userProfileListInstance]
+			[friendListInstance: friendListInstance]
 		}
 		else
 		{
@@ -202,12 +202,12 @@ class UserController {
 		if(isLogin)
 		{
 			def userLogin = User.get(springSecurityService.principal.id)
-			
+
 			if(userLogin.authorities.any { it.authority != "ROLE_USER" })
 			{
 				def userListInstance = User.list()
 				String roleUserLogin = (userLogin.authorities.any { it.authority == "ROLE_SUPER" } ? "S" : (userLogin.authorities.any { it.authority == "ROLE_ADMIN" } ? "A" : "U"))
-	
+
 				[userListInstance: userListInstance, userLogin: userLogin, roleUserLogin: roleUserLogin]
 			}
 			else

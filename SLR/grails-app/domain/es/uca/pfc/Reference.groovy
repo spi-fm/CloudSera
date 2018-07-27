@@ -40,7 +40,34 @@ class Reference implements Comparator<Reference> {
 	// Metadatos especificos que ser� una pareja de clave-valor (nombre atributo, valor)
 	//Map<String, String> specificAttributes = new HashMap<String, String>();
 
-	static constraints = { criterion(nullable: true) }
+	static constraints = {
+		arxiv(size:0..255)
+		chapter(size:0..255)
+		citation_key(size:0..255)
+		city(size:0..255)
+		country(size:0..255)
+		criterion(size:0..255, nullable: true)
+		day(size:0..255)
+		department(size:0..255)
+		doi(size:0..255)
+		genre(size:0..255)
+		idmend(size:0..255)
+		institution(size:0..255)
+		isbn(size:0..255)
+		issn(size:0..255)
+		issue(size:0..255)
+		month(size:0..255)
+		notes(size:0..255)
+		pages(size:0..255)
+		pmid(size:0..255)
+		publisher(size:0..255)
+		scopus(size:0..255)
+		series(size:0..255)
+		source(size:0..255)
+		source_type(size:0..255)
+		volume(size:0..255)
+		year(size:0..255)
+	}
 
 	/*static mapping = {
 	 authorsRefs(cascade: "all-delete-orphan")

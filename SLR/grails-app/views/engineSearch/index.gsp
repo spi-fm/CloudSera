@@ -7,8 +7,8 @@
     <%-- Head Meta --%>
     <g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Engine Searchs</title>
-    
+    <title>CloudSERA | Engine Searchs</title>
+
     <%-- CSS --%>
     <g:render template="css" contextPath="/"/>
 
@@ -35,35 +35,35 @@
 	<div id="wrapper">
 		<%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        	
+
 		<div id="page-wrapper">
         	<div class="row" style="margin-bottom: 20px;">
 				<div class="col-lg-12">
 					<h1 class="page-header">Engine Searchs</h1>
-					
+
 					<ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
 					  <li class="active">Engine Searchs</li>
 					</ol>
-					
+
 					<g:submitButton name="create" class="btn btn-primary" value="Save changes"/>
 					<p> </p>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-lg-12">
 					<div id="divSuccess" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Cambios guardados.</div>
 					<g:each in="${engineSearchListInstance}" var="engineSearchInstance">
-						
+
 						<h3>${engineSearchInstance.display_name}</h3>
-						
+
 						<div class="form-group">
 							<label for="${'input' + engineSearchInstance.name}" class="col-sm-3 control-label">api key</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" id="${'input' + engineSearchInstance.name}" name="${'input' + engineSearchInstance.name}" 
+								<input type="text" class="form-control" id="${'input' + engineSearchInstance.name}" name="${'input' + engineSearchInstance.name}"
 									value="${engineSearchInstance.apiKey}"  />
-							</div>						
+							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-3"></div>
@@ -84,10 +84,10 @@
 				</div>
 			</div>
         </div>
-        
+
         <%-- Foot --%>
         <g:render template="foot" contextPath="/"/>
-        
+
 	</div>
 
 </g:form>

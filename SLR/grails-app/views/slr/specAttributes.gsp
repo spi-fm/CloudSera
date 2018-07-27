@@ -10,11 +10,12 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | Specific Attributes</title>
+    <title>CloudSERA | Specific Attributes</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
-    
+
     <script type="text/javascript">
 		function getIdAttribute(id)
 		{
@@ -38,7 +39,7 @@
 			}
 			document.getElementById("opcionesEdit").value = options.toString();
 			document.getElementById('divErrorEditAttribute').style.display = "none";
-			
+
 		}
 		function loadModal()
 		{
@@ -172,7 +173,7 @@
 		    </div>
 		</div>
     </div>
-    
+
     <%--Ventana modal editar atributo --%>
 	<div class="modal fade" id="myModalEditAttribute" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     	<div class="modal-dialog">
@@ -241,7 +242,7 @@
 		    </div>
 		</div>
     </div>
-    
+
     <%-- Ventana modal para eliminar atributo --%>
     <div class="modal fade" id="myModalDrop" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
@@ -273,25 +274,25 @@
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Specific Attributes in ${slrInstance.title}</h1>
-                    
+
                     <ol class="breadcrumb">
 					  <li><g:link controller="index" action="menu">Home</g:link></li>
-					  <li><g:link controller="slr" action="myList">SLR List</g:link></li>
+					  <li><g:link controller="slr" action="myList">Review List</g:link></li>
 					  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link></li>
 					  <li class="active">Specific Attributes</li>
 					</ol>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-                        
+
             <div class="row">
-	            <div id="divSuccessAttribute" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Specific Attribute created correctly.</div>        	
-            	<div id="divSuccessEditAttribute" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Specific Attribute edited correctly.</div>        	
+	            <div id="divSuccessAttribute" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Specific Attribute created correctly.</div>
+            	<div id="divSuccessEditAttribute" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Specific Attribute edited correctly.</div>
             	<div class="col-lg-12">
                   	<div style="margin-top: 5px; margin-bottom: 20px;">
                   		<button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalAttribute">Create Attribute</button>
@@ -340,8 +341,8 @@
                             	</tr>
                             </g:each>
                         </tbody>
-                    </table>	
-                    
+                    </table>
+
                 </div>
 
             </div>
@@ -357,10 +358,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-myattributes').DataTable({

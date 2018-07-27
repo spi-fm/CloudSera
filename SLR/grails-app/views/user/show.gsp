@@ -10,18 +10,19 @@
 
     <title>
     	<g:if test="${isMyProfile}">
-    		SLR | My Profile
+    		CloudSERA | My Profile
     	</g:if>
     	<g:else>
-    		SLR | ${profileInstance.display_name}
+    		CloudSERA | ${profileInstance.display_name}
     	</g:else>
     </title>
-    
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
+
     <%-- CSS --%>
     <g:render template="css" contextPath="/"/>
     <link href="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css')}" rel="stylesheet">
     <link href="${resource(dir: 'bower_components', file: 'datatables-responsive/css/dataTables.responsive.css')}" rel="stylesheet">
-    
+
     <script type="text/javascript">
     function changeColourFriend()
 	{
@@ -69,7 +70,7 @@
 		}
 	}
     </script>
-    
+
 </head>
 
 <body onload="showMsgSynchro();">
@@ -78,7 +79,7 @@
 
         <%-- Head --%>
         <g:render template="head" contextPath="/"/>
-        
+
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
@@ -100,15 +101,15 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            
+
      		<div class="row">
 				<div id="divSuccess" class="alert alert-success" role="alert" style="display: none;"><i class="fa fa-check fa-fw"></i> Sincronización realizada correctamente.</div>
 				<div id="divError" class="alert alert-danger" role="alert" style="display: none;"><i class="fa fa-remove fa-fw"></i> Hubo problemas al sincronizar.</div>
 			</div>
-            
+
             <div class="row">
                 <div class="col-lg-3">
-                
+
                 	<g:if test="${profileInstance.url_foto.toString().contains('unknown_user.png')}">
                 		<div style="margin-bottom: 10px;"><img src="${resource(dir:'images/user', file: 'unknown_user.png')}" alt="" width="220" height="220" style="border: black solid thin;" /></div>
                 	</g:if>
@@ -117,7 +118,7 @@
 					</g:else>
                 	<%-- Code Mendeley --%>
 					<p><a target="parent" href="${profileInstance.link}"><img border="0" src="http://www.mendeley.com/embed/icon/1/blue/big" alt=""/></a></p>
-					
+
 					<g:if test="${!isMyProfile}">
 						<g:if test="${isMyFriend == 'S'}">
 							<%--<button id="btn_friend" type="button" class="btn btn-success btn-lg btn-block" onmouseover="changeColourFriend();" onmouseout="changeColourFriend();"><i class="glyphicon glyphicon-ok"></i> Sois amigos</button>--%>
@@ -133,14 +134,14 @@
 					<g:else>
 						<g:link type="buton" class="btn btn-primary" controller="user" action="synchronizeUserProfile" onclick="loading('Synchronizing profile...');" params="[guid: "${profileInstance.guid}"]"><g:message code="pfc.profile.button.synchro" locale="${languageDefault}" /></g:link>
 					</g:else>
-					
+
                 </div>
-                
+
                 <div class="col-lg-9">
-                
+
                 	<div style="width: 100%;">
 						<ul id="myTab" class="nav nav-tabs">
-							<li class="active"><a href="#datospersonales" data-toggle="tab"><g:message code="pfc.profile.onglet.personal.info" locale="${languageDefault}" /></a></li>								
+							<li class="active"><a href="#datospersonales" data-toggle="tab"><g:message code="pfc.profile.onglet.personal.info" locale="${languageDefault}" /></a></li>
 							<g:if test="${profileInstance.user.id != User.get(sec.loggedInUserInfo(field:"id").toString().toLong()).id}">
 								<li><a href="#misslrs" data-toggle="tab"><g:message code="pfc.profile.onglet.list.slr" locale="${languageDefault}" /> (${profileInstance.slrs.size()})</a></li>
 								<li><a href="#educations" data-toggle="tab"><g:message code="pfc.profile.onglet.list.education" locale="${languageDefault}" /> (${profileInstance.educations.size()})</a></li>
@@ -154,7 +155,7 @@
 						</ul>
 					</div>
 					<div id="myTabContent" class="tab-content">
-					
+
 						<%-- DATOS PERSONALES --%>
 						<div class="tab-pane fade in active" id="datospersonales">
 							<div style="float: left; margin-left: 20px; margin-top:10px; clear: both;">
@@ -162,7 +163,7 @@
 									<p><b>First name: </b><g:fieldValue bean="${profileInstance}" field="first_name"/></p>
 									<p><b>Last name: </b><g:fieldValue bean="${profileInstance}" field="last_name"/></p>
 									<p><b>Email: </b><g:fieldValue bean="${profileInstance.user}" field="username"/></p>
-									<g:if test="${profileInstance.link.toString().contains("http://")}">	
+									<g:if test="${profileInstance.link.toString().contains("http://")}">
 										<p><b>Web: </b><a target="parent" href="${profileInstance.link.toString()}">${profileInstance.link}</a></p>
 									</g:if>
 									<g:else>
@@ -175,7 +176,7 @@
 									<p><b>Interests: </b>${profileInstance.research_interests}</p>
 									<p><b>Statut Academic: </b>${profileInstance.academic_status}</p>
 									<p><b>Localization: </b>${profileInstance.locationName}</p>
-									<p><b>Discipline: </b>${profileInstance.discipline}</p>									
+									<p><b>Discipline: </b>${profileInstance.discipline}</p>
 								</div>
 								<div style="float: left; margin-top:10px; clear: both;">
 									<p><b>Biography: </b></p>
@@ -188,10 +189,10 @@
 								</div>
 							</div>
 						</div>
-						
+
 						<%-- Educations --%>
 						<div class="tab-pane fade" id="educations">
-							
+
 							<div class="panel panel-default">
 		                        <div class="panel-heading">
 		                            Educations
@@ -222,20 +223,20 @@
 		                                    </tbody>
 		                                </table>
 		                            </div>
-		                            
+
 		                        </div>
 		                        <!-- /.panel-body -->
 		                    </div>
-							
+
 						</div>
-						
-						
+
+
 						<%-- SLR's --%>
 						<div class="tab-pane fade" id="misslrs">
-							
+
 							<div class="panel panel-default">
 		                        <div class="panel-heading">
-		                            Systematic Literature Review
+		                            Systematic Review
 		                        </div>
 		                        <!-- /.panel-heading -->
 		                        <div class="panel-body">
@@ -263,17 +264,17 @@
 		                                    </tbody>
 		                                </table>
 		                            </div>
-		                            
+
 		                        </div>
 		                        <!-- /.panel-body -->
 		                    </div>
-							
+
 						</div>
-						
-						
+
+
 						<%-- SLR's --%>
 						<div class="tab-pane fade" id="myfriends">
-							
+
 							<div class="panel panel-default">
 		                        <div class="panel-heading">
 		                            Friends
@@ -304,19 +305,19 @@
 		                                    </tbody>
 		                                </table>
 		                            </div>
-		                            
+
 		                        </div>
 		                        <!-- /.panel-body -->
 		                    </div>
-							
+
 						</div>
-						
-						
+
+
 					</div>
-                
+
                 </div>
             </div>
-                        
+
         </div>
         <!-- /#page-wrapper -->
 
@@ -328,10 +329,10 @@
 
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/" />
-	
+
 	<script src="${resource(dir: 'bower_components', file: 'datatables/media/js/jquery.dataTables.min.js')}"></script>
 	<script src="${resource(dir: 'bower_components', file: 'datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')}"></script>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('#dataTables-educations').DataTable({

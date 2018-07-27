@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
+
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
-    
-    <link rel="icon" href="favicon.ico">
 
-    <title>Systematic Literature Review</title>
+  <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
+
+    <title>CloudSERA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,7 +24,7 @@
 
     <!-- Custom styles for this template -->
     <link href="bower_components/bootstrap/dist/css/carousel.css" rel="stylesheet">
-    
+
   </head>
 <body>
 
@@ -37,7 +37,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <g:link class="navbar-brand">Systematic Literature Review</g:link>
+          <g:link class="navbar-brand">CloudSERA</g:link>
         </div>
       </div>
     </nav>
@@ -46,7 +46,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>About us</h1>
-        <p>Information of this web application.</p>
+        <p>About the app: Tool for supporting systematic reviews, both systematic literature reviews and systematic mappings.</p>
       </div>
     </div>
 
@@ -54,15 +54,19 @@
       <!-- Example row of columns -->
       <div class="row">
         <div class="col-md-9">
-          <h2 class="page-header">Final Project Career</h2>
+          <h2 class="page-header">Credits</h2>
           <!-- <p class="lead">Originally created by a designer and a developer at Twitter, Bootstrap has become one of the most popular front-end frameworks and open source projects in the world.</p> -->
-          <p><b>Systematic Literature Review</b> is created like a requeriment of research group SPI&FM of University of Cádiz for create a tool for help to the doctoral studies to atomate the process
-          of creation of the systematic literature reviews. In other words, this web is a final project of career of Degree Computer Engineering of the High School of Engineering of the University of Cádiz.</p>
-          
-          <p><u>Project</u>: Revisión Sistemática de la Literatura (Systematic Literature Review)</p>
+          <p><b>CloudSERA</b> is created as a requeriment of research group SPI&FM of University of Cádiz to create a tool for helping doctorate studies to automatize the process
+          of creating a systematic literature review. In other words, this web is a final degree project of Computer Science at Escuela Superior de Ingeniería of the University of Cádiz.</p>
+          <p><u>Project</u>: Revisión Sistemática de la Literatura (CloudSERA)</p>
           <p><u>Degree</u>: Computer Engineering</p>
-          <p><u>Created by</u>: ÁNGEL RAFAEL GONZÁLEZ TORO (<a href="mailto:angel.gonzatoro@gmail.com">angel.gonzatoro@gmail.com</a>)</p>
-          <p><u>Academic Tutor</u>: Iván Ruiz Rube</p>
+          <p><u>Universidad de Cádiz</u>: SPI-FM Research group</p>
+          <p><u>Main developer</u>: ÁNGEL RAFAEL GONZÁLEZ TORO (<a href="mailto:angel.gonzatoro@gmail.com">angel.gonzatoro@gmail.com</a>)</p>
+          <p><u>Project Manager</u>: Iván Ruiz Rube (<a href="mailto:ivan.ruiz@uca.es">ivan.ruiz@uca.es</a>)</p>
+          <p><u>Developer</u>: Jesús Borrego Martín (<a href="mailto:jesus.borrego.1993@gmail.com">jesus.borrego.1993@gmail.com</a>)</p>
+          <p><u>Project tester</u>: Juan Manuel Dodero (<a href="mailto:juanma.dodero@uca.es">juanma.dodero@uca.es</a>)</p>
+          <p><u>Project tester</u>: José Miguel Mota (<a href="mailto:josemiguel.mota@uca.es">josemiguel.mota@uca.es</a>)</p>
+          <p><u>Project tester</u>: Tatiana Person Montero (<a href="mailto:tatiana.person@uca.es">tatiana.person@uca.es</a>)</p>
         </div>
       </div>
 

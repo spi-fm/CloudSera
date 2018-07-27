@@ -8,7 +8,8 @@
     <%-- Head Meta --%>
 	<g:render template="headMeta" contextPath="/"/>
 
-    <title>SLR | ${slrInstance.title}</title>
+    <title>CloudSERA | ${slrInstance.title}</title>
+    <link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 	<%-- CSS --%>
     <g:render template="css" contextPath="/"/>
@@ -39,7 +40,7 @@
 				<g:form controller="slr" action="delete" id="myFormDelete" name="myFormDelete" method="DELETE">
 					<g:hiddenField name="guidSlr" value="0" />
 					<div class="modal-body">
-						Do you delete this SLR ?
+						Do you really want to delete this SLR ?
 					</div>
 					<div class="modal-footer">
 						<button class="btn btn-default" data-dismiss="modal" type="button">No</button>
@@ -50,26 +51,75 @@
 			</div>
 		</div>
 	</div>
-	
+
+  <div class="modal fade" id="myEditDrop" tabindex="-1" role="dialog" aria-labelledby="myEditLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<h4 class="modal-title">Edit SLR</h4>
+  			</div>
+  			<g:form controller="slr" action="edit">
+  				<g:hiddenField name="id" value="${slrInstance.id}" />
+          <div>
+            Justificacion: <g:textField name="justification" value="${slrInstance.justification}" /><BR>
+            Objectives: <g:textField name="objectives" value="Objetivos del review" /><BR>
+            Threats to validity: <g:textField name="threats_to_validity" value="Aplicación, interés, errores sistematicos..." /><BR>
+            Conclusion: <g:textField name="conclusions" value="Conclusiones del review" /><BR>
+          </div>
+  				<div class="modal-footer">
+  					<button class="btn btn-default" data-dismiss="modal" type="button">No</button>
+  					<!--<g:submitButton id="boton" name="boton" class="btn btn-primary" value="Sí"/>-->
+            <g:submitButton name="boton" class="btn btn-primary" value="Yes" onclick="closeModalWithMessage('myModalDrop','Editing SLR...');" />
+  				</div>
+  			</g:form>
+  		</div>
+  	</div>
+  </div>
+
+  <div class="modal fade" id="friendShare" tabindex="-1" role="dialog" aria-labelledby="shareLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+  				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  				<h4 class="modal-title">Share SLR</h4>
+  			</div>
+  			<g:form controller="slr" action="shareWithFriend">
+  				<g:hiddenField name="id" value="${slrInstance.id}" />
+          <div>
+            <g:each in="${friendListInstance}" var="user">
+              <p> ${user.username} </p>
+            </g:each>
+          </div>
+  				<div class="modal-footer">
+  					<button class="btn btn-default" data-dismiss="modal" type="button">No</button>
+  					<!--<g:submitButton id="boton" name="boton" class="btn btn-primary" value="Sí"/>-->
+            <g:submitButton name="boton" class="btn btn-primary" value="Yes" onclick="closeModalWithMessage('friendShare','Editing SLR...');" />
+  				</div>
+  			</g:form>
+  		</div>
+  	</div>
+  </div>
+
 	<g:form>
-	
+
 	    <div id="wrapper">
-	
+
 	        <%-- Head --%>
 	        <g:render template="head" contextPath="/"/>
-	        
-	        <div id="page-wrapper">	
+
+	        <div id="page-wrapper">
 				<div class="row" style="margin-bottom: 20px;">
 					<div class="col-lg-12">
 						<h1 class="page-header">${slrInstance.title}</h1>
-						
+
 						<ol class="breadcrumb">
 						  <li><g:link controller="index" action="menu">Home</g:link></li>
-						  <li><g:link controller="slr" action="myList">SLR List</g:link></li>
+						  <li><g:link controller="slr" action="myList">Review List</g:link></li>
 						  <li><g:link controller="slr" action="show" params="[guidSlr: "${slrInstance.guid}"]">${slrBreadCrumb}</g:link>
 						  <li class="active">Graphs</li>
 						</ol>
-					
+
 						<!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDrop">Eliminar SLR</button> -->
 					</div>
 					<div class="col-lg-12">
@@ -78,7 +128,9 @@
 						<g:link title="Criterions" class="btn btn-primary" controller="slr" action="criterions" params="[guid: "${slrInstance.guid}"]"><i class="fa fa-bookmark"></i> Criterions</g:link>
 						<g:link title="Specific Attributes" class="btn btn-primary" controller="slr" action="specAttributes" params="[guid: "${slrInstance.guid}"]"><i class="glyphicon glyphicon-tags"></i> Specific Attributes</g:link>
 						<g:link title="Searchs" type="button" class="btn btn-primary" controller="slr" action="searchs" params="[guid: "${slrInstance.guid}"]"><i class="glyphicon glyphicon-search"></i> Searchs</g:link>
-						<button title="Delete SLR" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDrop" onclick="getIdSlr('${slrInstance.guid}')"><i class="fa fa-times"></i> Delete</button>
+            <button title="Edit SLR" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myEditDrop" onclick="getIdSlr('${slrInstance.guid}')">Edit</button>
+            <button title="Share SLR" type="button" class="btn btn-primary" data-toggle="modal" data-target="#friendShare" onclick="getIdSlr('${slrInstance.guid}')">Share</button>
+            <button title="Delete SLR" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModalDrop" onclick="getIdSlr('${slrInstance.guid}')"><i class="fa fa-times"></i> Delete</button>
 					</div>
 					<div class="col-lg-12" style="padding-top: 5px;">
 						<g:link title="Export Excel" type="button" class="btn btn-success" controller="slr" action="exportToExcel" params="[guid: "${slrInstance.guid}"]"><i class="fa fa-file-excel-o"></i> Excel</g:link>
@@ -140,7 +192,7 @@
 						 --%>
 					</div>
 				</div>
-				
+
 				<div class="row" style="margin-top: 20px;">
 					<div class="col-lg-6">
 						<div class="panel panel-default">
@@ -165,10 +217,10 @@
 				</div>
 			</div>
 			<!-- /#page-wrapper -->
-	
+
 			<%-- Foot --%>
     	    <g:render template="foot" contextPath="/"/>
-	
+
 	    </div>
 	    <!-- /#wrapper -->
     </g:form>
@@ -176,12 +228,12 @@
     <%-- JavaScript --%>
     <g:render template="javascript" contextPath="/"/>
 	<g:render template="graphsGoogleSlrView" contextPath="/graphs"/>
-	
+
 	<script type="text/javascript">
 	    $(document).ready(function() {
 	        $('[data-toggle="popover"]').popover({
 	        	content: '<g:render template="slrInfo" contextPath="/slr"/>'
-	        }); 
+	        });
 	    });
 	</script>
 </body>

@@ -9,7 +9,8 @@
 <%-- Head Meta --%>
 <g:render template="headMeta" contextPath="/" />
 
-<title>SLR | Create SLR (Wizard)</title>
+<title>CloudSERA | Create Review (Wizard)</title>
+<link rel="icon" href="https://github.com/spi-fm/CloudSERA/raw/master/images/CloudSERA-sm.jpeg">
 
 <%-- CSS --%>
 <g:render template="css" contextPath="/" />
@@ -36,7 +37,7 @@
 			}
 			document.getElementById("opcionesEdit").value = options.toString();
 			document.getElementById('divErrorEditAttribute').style.display = "none";
-			
+
 		}
 		function loadModal()
 		{
@@ -309,12 +310,12 @@
 		<div id="page-wrapper">
 			<div class="row">
 				<div class="col-lg-12">
-					<h1 class="page-header">Create SLR (Wizard) <small>${slrInstance.title}</small></h1>
+					<h1 class="page-header">Create Review (Wizard) <small>${slrInstance.title}</small></h1>
 
 					<ol class="breadcrumb">
 						<li><g:link controller="index" action="menu">Home</g:link></li>
-						<li><g:link controller="slr" action="myList">My SLR's</g:link></li>
-						<li class="active">Create SLR (Wizard)</li>
+						<li><g:link controller="slr" action="myList">My Reviews</g:link></li>
+						<li class="active">Create Review (Wizard)</li>
 					</ol>
 				</div>
 
@@ -324,7 +325,7 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<ul class="nav nav-wizard">
-						<li class="active"><a href="#">1. Need of SLR</a></li>
+						<li class="active"><a href="#">1. Create Review</a></li>
 						<li class="active"><a href="#">2. Researchs Questions</a></li>
 						<li class="active"><a href="#">3. Criterions</a></li>
 						<li class="active"><a href="#">4. Specific Attributes</a></li>

@@ -1,0 +1,110 @@
+import org.codehaus.groovy.grails.plugins.metadata.GrailsPlugin
+import org.codehaus.groovy.grails.web.pages.GroovyPage
+import org.codehaus.groovy.grails.web.taglib.*
+import org.codehaus.groovy.grails.web.taglib.exceptions.GrailsTagException
+import org.springframework.web.util.*
+import grails.util.GrailsUtil
+
+class gsp_SLR_graphs_graphsGoogle_gsp extends GroovyPage {
+public String getGroovyPageFileName() { "/WEB-INF/grails-app/views/graphs/_graphsGoogle.gsp" }
+public Object run() {
+Writer out = getOut()
+Writer expressionOut = getExpressionOut()
+registerSitemeshPreprocessMode()
+printHtmlPart(0)
+out.print(queryCriterion1)
+printHtmlPart(1)
+out.print(queryEngine1)
+printHtmlPart(2)
+out.print(queryDepartment1)
+printHtmlPart(3)
+out.print(queryType1)
+printHtmlPart(4)
+out.print(queryLanguage1)
+printHtmlPart(5)
+out.print(querySearch1)
+printHtmlPart(6)
+out.print(queryCriterion2)
+printHtmlPart(7)
+out.print(queryEngine2)
+printHtmlPart(8)
+out.print(queryDepartment2)
+printHtmlPart(9)
+out.print(queryType2)
+printHtmlPart(10)
+out.print(queryLanguage2)
+printHtmlPart(11)
+out.print(criterionShowTextEvery)
+printHtmlPart(12)
+out.print(criterionShowTextEvery)
+printHtmlPart(13)
+out.print(criterionShowTextEvery)
+printHtmlPart(14)
+out.print(criterionShowTextEvery)
+printHtmlPart(15)
+out.print(criterionShowTextEvery)
+printHtmlPart(16)
+out.print(queryCriterion2)
+printHtmlPart(7)
+out.print(queryEngine2)
+printHtmlPart(8)
+out.print(queryDepartment2)
+printHtmlPart(9)
+out.print(queryType2)
+printHtmlPart(10)
+out.print(queryLanguage2)
+printHtmlPart(17)
+out.print(criterionShowTextEvery)
+printHtmlPart(18)
+out.print(criterionShowTextEvery)
+printHtmlPart(19)
+out.print(criterionShowTextEvery)
+printHtmlPart(20)
+out.print(criterionShowTextEvery)
+printHtmlPart(21)
+out.print(criterionShowTextEvery)
+printHtmlPart(22)
+out.print(queryCriterion1)
+printHtmlPart(7)
+out.print(queryEngine1)
+printHtmlPart(8)
+out.print(queryDepartment1)
+printHtmlPart(9)
+out.print(queryType1)
+printHtmlPart(10)
+out.print(queryLanguage1)
+printHtmlPart(23)
+out.print(querySearch1)
+printHtmlPart(24)
+out.print(queryCriterion3)
+printHtmlPart(7)
+out.print(queryEngine3)
+printHtmlPart(8)
+out.print(queryDepartment3)
+printHtmlPart(9)
+out.print(queryType3)
+printHtmlPart(10)
+out.print(queryLanguage3)
+printHtmlPart(25)
+out.print(totalCriterions)
+printHtmlPart(26)
+out.print(totalEngines)
+printHtmlPart(27)
+out.print(totalDepartments)
+printHtmlPart(28)
+out.print(totalTypes)
+printHtmlPart(29)
+out.print(totalLanguages)
+printHtmlPart(30)
+}
+public static final Map JSP_TAGS = new HashMap()
+protected void init() {
+	this.jspTags = JSP_TAGS
+}
+public static final String CONTENT_TYPE = 'text/html;charset=UTF-8'
+public static final long LAST_MODIFIED = 1498065296000L
+public static final String EXPRESSION_CODEC = 'html'
+public static final String STATIC_CODEC = 'none'
+public static final String OUT_CODEC = 'none'
+public static final String TAGLIB_CODEC = 'none'
+}

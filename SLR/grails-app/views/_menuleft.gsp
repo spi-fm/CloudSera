@@ -1,7 +1,7 @@
 <%@ page import="es.uca.pfc.User" %>
 <div class="navbar-default sidebar" role="navigation">
 	<div class="sidebar-nav navbar-collapse">
-	
+
 	<g:if test="${!request.forwardURI.contains("references")}">
 		<ul class="nav" id="side-menu">
 			<%--<li class="sidebar-search">
@@ -30,6 +30,9 @@
 			</g:if>
 			<li>
 				<g:link controller="slr" action="myList"><i class="fa fa-folder-open"></i> <g:message code="pfc.main.left.slr" locale="${languageDefault}" /></g:link>
+			</li>
+			<li>
+				<g:link controller="slr" action="list"><i class="fa fa-folder-open"></i> <g:message code="pfc.main.left.slrs" locale="${languageDefault}" /></g:link>
 			</li>
 			<li>
 			    <g:link controller="index" action="loggers"><i class="fa fa-history fa-fw"></i> <g:message code="pfc.main.left.logger" locale="${languageDefault}" /></g:link>
