@@ -87,9 +87,8 @@ public class Education
 	public Date getStartDate() throws ParseException {
 		try {
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			Date fecha = format.parse(start_date);
 			
-			return fecha;
+			return format.parse(start_date);
 		}
 		catch(Exception pex) {
 			return null;
@@ -114,8 +113,7 @@ public class Education
 	public Date getEndDate() throws ParseException {
 		try {
 			SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-			Date fecha = format.parse(end_date);
-			return fecha;
+			return format.parse(end_date);
 		} catch(Exception ex) { return null; }
 	}
 	

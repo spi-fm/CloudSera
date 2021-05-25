@@ -46,9 +46,8 @@ public class ProfileService {
 		JsonElement json = (JsonElement) parser.parse(responseBody);
 		
 		Gson gson = new Gson();
-		Profile profile = gson.fromJson(json, Profile.class);
 	    	    
-		return profile;
+		return gson.fromJson(json, Profile.class);
 	}
 	
 	public Profile getCurrentProfile() throws HttpException, IOException, MendeleyException
@@ -70,9 +69,8 @@ public class ProfileService {
 		JsonElement json = (JsonElement) parser.parse(responseBody);
 		
 		Gson gson = new Gson();
-		Profile profile = gson.fromJson(json, Profile.class);
 	    	    
-		return profile;
+		return gson.fromJson(json, Profile.class);
 	}
 	
 	public Profile updateCurrentProfile(Profile profile, Profile challenges) throws HttpException, IOException, MendeleyException
@@ -113,9 +111,7 @@ public class ProfileService {
 	    
 	    JsonParser parser = new JsonParser();
 		JsonElement json = (JsonElement) parser.parse(responseBody);
-		
-		Profile updateProfile = gson.fromJson(json, Profile.class);
 	    
-	    return updateProfile;
+	    return gson.fromJson(json, Profile.class);
 	}
 }

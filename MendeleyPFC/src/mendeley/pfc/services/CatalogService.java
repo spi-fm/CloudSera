@@ -21,7 +21,6 @@ import mendeley.pfc.commons.TypeDocument;
 import mendeley.pfc.commons.TypeDocumentDeserializer;
 import mendeley.pfc.schemas.Catalog;
 import mendeley.pfc.schemas.Document;
-import mendeley.pfc.schemas.Folder;
 
 public class CatalogService {
 

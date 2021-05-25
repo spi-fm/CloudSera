@@ -1,13 +1,6 @@
 package mendeley.pfc.tests;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
-import mendeley.pfc.commons.MendeleyException;
-import mendeley.pfc.commons.TypeDocument;
 import mendeley.pfc.schemas.Document;
 import mendeley.pfc.schemas.Folder;
 import mendeley.pfc.services.DocumentService;

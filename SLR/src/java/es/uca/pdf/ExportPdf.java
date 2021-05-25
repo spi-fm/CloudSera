@@ -118,7 +118,8 @@ public class ExportPdf {
 		Chunk chunk01 = new Chunk("Title", underlineFont);
 		Chunk chunk02 = new Chunk(": " + slrInstance.getTitle(), normalFont);
 		Paragraph p = new Paragraph();
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		p.setIndentationLeft(10);
 		p.setSpacingBefore(10);
 		section.add(p);
@@ -128,7 +129,8 @@ public class ExportPdf {
 		p = new Paragraph();
 		p.setSpacingBefore(10);
 		p.setIndentationLeft(10);
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		section.add(p);
 
 		chunk01 = new Chunk("Justification", underlineFont);
@@ -136,7 +138,8 @@ public class ExportPdf {
 		p = new Paragraph();
 		p.setSpacingBefore(10);
 		p.setIndentationLeft(10);
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		section.add(p);
 	}
 	
@@ -150,7 +153,8 @@ public class ExportPdf {
 		Chunk chunk01 = new Chunk("Total", underlineFont);
 		Chunk chunk02 = new Chunk(": " + questions.size(), normalFont);
 		Paragraph p = new Paragraph();
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		p.setIndentationLeft(10);
 		p.setSpacingBefore(10);
 		section.add(p);
@@ -195,7 +199,8 @@ public class ExportPdf {
 		Chunk chunk01 = new Chunk("Total", underlineFont);
 		Chunk chunk02 = new Chunk(": " + attributes.size(), normalFont);
 		Paragraph p = new Paragraph();
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		p.setIndentationLeft(10);
 		p.setSpacingBefore(10);
 		section.add(p);
@@ -258,7 +263,8 @@ public class ExportPdf {
 		Chunk chunk01 = new Chunk("Total", underlineFont);
 		Chunk chunk02 = new Chunk(": " + searchs.size(), normalFont);
 		Paragraph p = new Paragraph();
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		p.setIndentationLeft(10);
 		p.setSpacingBefore(10);
 		section.add(p);
@@ -327,7 +333,8 @@ public class ExportPdf {
 		Chunk chunk01 = new Chunk("Total", underlineFont);
 		Chunk chunk02 = new Chunk(": " + criterions.size(), normalFont);
 		Paragraph p = new Paragraph();
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		p.setIndentationLeft(10);
 		p.setSpacingBefore(10);
 		section.add(p);
@@ -390,7 +397,8 @@ public class ExportPdf {
 		Chunk chunk01 = new Chunk("Total", underlineFont);
 		Chunk chunk02 = new Chunk(": " + primaryStudies.size(), normalFont);
 		Paragraph p = new Paragraph();
-		p.add(chunk01); p.add(chunk02);
+		p.add(chunk01); 
+		p.add(chunk02);
 		p.setIndentationLeft(10);
 		p.setSpacingBefore(10);
 		section.add(p);

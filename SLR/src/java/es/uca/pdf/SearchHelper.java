@@ -1,8 +1,6 @@
 package es.uca.pdf;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class SearchHelper {
 

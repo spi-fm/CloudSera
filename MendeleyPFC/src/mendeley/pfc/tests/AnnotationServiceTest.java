@@ -1,9 +1,5 @@
 package mendeley.pfc.tests;
 
-import java.util.List;
-
-import mendeley.pfc.schemas.Annotation;
-import mendeley.pfc.schemas.Document;
 import mendeley.pfc.schemas.Folder;
 import mendeley.pfc.services.AnnotationService;
 import mendeley.pfc.services.DocumentService;

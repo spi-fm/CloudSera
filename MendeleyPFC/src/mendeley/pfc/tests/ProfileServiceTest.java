@@ -1,14 +1,5 @@
 package mendeley.pfc.tests;
 
-import java.io.IOException;
-
-import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
-
-import mendeley.pfc.commons.MendeleyException;
-import mendeley.pfc.schemas.Profile;
-import mendeley.pfc.services.MendeleyService;
-import mendeley.pfc.services.ProfileService;
-
 public class ProfileServiceTest {
 
 	public static final String APP_EMAIL = "angel.gonzatoro@gmail.com";

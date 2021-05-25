@@ -250,10 +250,8 @@ public class FolderService
 	    
 	    JsonParser parser = new JsonParser();
 		JsonElement json = (JsonElement) parser.parse(responseBody);
-		
-		Folder folder = gson.fromJson(json, Folder.class);
 	    
-		return folder;
+		return gson.fromJson(json, Folder.class);
 	}
 	
 	/**

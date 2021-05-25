@@ -41,7 +41,10 @@ public class BackgroundSearchMendeleyTest {
 		searchsTerms.add(stp01); searchsTerms.add(stp02); //searchsTerms.add(stp03);
 		
 		List<String> tags = new ArrayList<String>();
-		tags.add("cr_included"); tags.add("met_met1_yes"); tags.add("met_met2_35"); tags.add("met_met3_ingles");
+		tags.add("cr_included"); 
+		tags.add("met_met1_yes"); 
+		tags.add("met_met2_35"); 
+		tags.add("met_met3_ingles");
 		
 		Map<TypeEngineSearch, Boolean> optionsEngine = new HashMap<TypeEngineSearch, Boolean>();
 		optionsEngine.put(TypeEngineSearch.ACM, true);

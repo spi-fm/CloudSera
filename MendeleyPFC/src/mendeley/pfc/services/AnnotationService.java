@@ -45,9 +45,8 @@ public class AnnotationService {
 	    
 	    Gson gson = new Gson();
 		Type typeListAnnotation = new TypeToken<List<Annotation>>(){}.getType();
-		List<Annotation> annotations = gson.fromJson(new String(get.getResponseBodyAsString().getBytes("ISO-8859-1"), "UTF-8"), typeListAnnotation);
 		
-		return annotations;
+		return  gson.fromJson(new String(get.getResponseBodyAsString().getBytes("ISO-8859-1"), "UTF-8"), typeListAnnotation);
 	}
 	
 	public Annotation createAnnotation(Annotation metadatos) throws HttpException, IOException
@@ -74,9 +73,7 @@ public class AnnotationService {
 	    JsonParser parser = new JsonParser();
 		JsonElement json = (JsonElement) parser.parse(responseBody);
 		
-		Annotation annotation = gson.fromJson(json, Annotation.class);
-		
-		return annotation;
+		return gson.fromJson(json, Annotation.class);
 	}
 	
 	public Annotation updateAnnotation(Annotation annotation, Annotation challenges) throws HttpException, IOException
@@ -106,10 +103,8 @@ public class AnnotationService {
 	    
 	    JsonParser parser = new JsonParser();
 		JsonElement json = (JsonElement) parser.parse(responseBody);
-		
-		Annotation updateAnnotation = gson.fromJson(json, Annotation.class);
 	    
-		return updateAnnotation;
+		return gson.fromJson(json, Annotation.class);
 	}
 	
 	public Annotation getAnnotationByDocument(Document document) throws HttpException, IOException

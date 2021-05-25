@@ -5,7 +5,6 @@ import java.util.List;
 import mendeley.pfc.services.DocumentService;
 import mendeley.pfc.services.FolderService;
 import mendeley.pfc.services.MendeleyService;
-import mendeley.pfc.schemas.Document;
 import mendeley.pfc.schemas.Folder;
 
 public class FolderServiceTest {
