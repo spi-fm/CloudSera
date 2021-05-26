@@ -109,6 +109,3 @@ Once we have clicked on the button 'Create search', a search will be carried out
 ## Case Study
 
 ## Software tests
-
-
-Test
