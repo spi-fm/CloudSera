@@ -102,10 +102,3 @@ terms that are inserted, if you must include ALL, ANY or NONE.
 Once we have clicked on the button 'Create search', a search will be carried out in the background with the information provided while we can do another operation within the application.
 
 ![Parameters](https://github.com/spi-fm/CloudSERA/blob/master/images/11Options.png)
-
-
-## Developer's guide
-
-## Case Study
-
-## Software tests
